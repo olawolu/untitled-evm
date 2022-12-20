@@ -27,6 +27,9 @@ type TestCase struct {
 	Name   string
 	Code   code
 	Expect expect
+	Tx     evm.Transaction
+	State  interface{}
+	Block  evm.Block
 }
 
 func main() {
@@ -68,7 +71,7 @@ func main() {
 		// Note: as the test cases get more complex, you'll need to modify this
 		// to pass down more arguments to the evm function and return more than
 		// just the stack.
-		stack, returnData, success := evm.Run(bin)
+		stack, returnData, success := evm.Run(bin, &test.Tx, test.State, &test.Block)
 
 		match := len(stack) == len(expectedStack)
 		if match {
