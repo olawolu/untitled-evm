@@ -1,15 +1,19 @@
 package evm
 
-import "github.com/holiman/uint256"
+import (
+	"fmt"
+
+	"github.com/holiman/uint256"
+)
 
 /** Stack is a simple stack implementation
- It is not thread safe
- data is stored in a slice as LIFO
- e.g. [1, 2, 3] is treated as
- 		|3|
- 		|2|
- 		|1|
- means 3 is the on top of the stack at index 0
+It is not thread safe
+data is stored in a slice as LIFO
+e.g. [1, 2, 3] is treated as
+		|3|
+		|2|
+		|1|
+means 3 is the on top of the stack at index 0
 */
 type Stack struct {
 	depth int
@@ -29,6 +33,8 @@ func (s *Stack) Push(v uint256.Int) {
 	} else {
 		s.data = append(s.data, v)
 	}
+	fmt.Printf("PUSH %v -> stack: %v \n", v, s.data)
+
 	s.depth++
 }
 
@@ -36,6 +42,7 @@ func (s *Stack) Pop() uint256.Int {
 	v := s.data[0]
 	s.data = s.data[1:]
 	s.depth--
+	fmt.Printf("POP %v -> stack: %v \n", v, s.data)
 	return v
 }
 
