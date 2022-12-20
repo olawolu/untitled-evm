@@ -1,6 +1,10 @@
 package evm
 
-import "github.com/holiman/uint256"
+import (
+	"fmt"
+
+	"github.com/holiman/uint256"
+)
 
 /** Memory is a simple memory implementation
 It is not thread safe
@@ -37,6 +41,7 @@ func (m *Memory) Set(offset, size uint64, value []byte) {
 func (m *Memory) Set32(offset uint64, val *uint256.Int) {
 	// length of store may never be less than offset + size.
 	// The store should be resized PRIOR to setting the memory
+	fmt.Println("Set32", offset, len(m.data))
 	if offset+32 > uint64(len(m.data)) {
 		panic("memory limit reached: requested size is larger than available memory")
 	}
