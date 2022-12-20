@@ -1,0 +1,9 @@
+{
+  "0x1e79b045dc29eae9fdc69673c9dcd7c53e5e159d": {
+    "code": {
+      "asm": "PUSH1 1",
+      "bin": "6001"
+    },
+    "balance": "200"
+  }
+}

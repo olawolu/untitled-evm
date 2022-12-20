@@ -1,0 +1,8 @@
+{
+  "coinbase": "0x777",
+  "timestamp": "15000001",
+  "number": "1000001",
+  "difficulty": "0x20000",
+  "gaslimit": "0xffffffffffff",
+  "chainid": "1"
+}
