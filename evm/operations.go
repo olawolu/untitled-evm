@@ -3,7 +3,6 @@ package evm
 import (
 	"encoding/hex"
 	"fmt"
-	"os"
 	"strconv"
 
 	"github.com/blocktree/openwallet/crypto"
@@ -13,7 +12,6 @@ import (
 
 func invalidOp(ctx *executionContext) []uint256.Int {
 	fmt.Println("invalid opcode", ctx.code[ctx.pc-1])
-	os.Exit(1)
 	return ctx.stack.data
 }
 

@@ -1,8 +1,9 @@
-module github.com/helicarrierstudio/untitled-evm
+module github.com/olawolu/untitled-evm
 
 go 1.18
 
 require (
+	github.com/helicarrierstudio/untitled-evm v0.0.0-20221220081537-4824bc3a5960
 	github.com/holiman/uint256 v1.2.1
 	github.com/stretchr/testify v1.8.1
 )

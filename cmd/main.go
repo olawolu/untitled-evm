@@ -28,8 +28,13 @@ func main() {
 
 	fmt.Println("--------stack--------")
 	for _, item := range stack {
-		fmt.Printf("[%v]\n", item.ToBig().String())
+		fmt.Printf("[%v]\n", item.Hex())
 	}
+	b, err := hex.DecodeString(stack[0].String()[2:])
+	if err != nil {
+		log.Fatal("Error during hex.DecodeString(): ", err)
+	}
+	fmt.Println(string(b))
 
 	fmt.Println("result:", result)
 	fmt.Println("status:", status)
